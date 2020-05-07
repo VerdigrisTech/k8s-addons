@@ -1,2 +1,4 @@
-# k8s-nginx-ingress
-Manifest files for nginx ingress controller
+# k8s-addons
+Addon manifest files for k8s deployment
+
+nginx ingress controller based on poseidon/Typhoon
