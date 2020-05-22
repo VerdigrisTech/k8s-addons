@@ -2063,26 +2063,6 @@ metadata:
   name: prometheus-rules
   namespace: monitoring
 ---
-# Allow Grafana access and in-cluster Prometheus scraping
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: prometheus
-  namespace: monitoring
-spec:
-  podSelector:
-    matchLabels:
-      name: prometheus
-  ingress:
-    - ports:
-        - protocol: TCP
-          port: 9090
-      from:
-        - namespaceSelector:
-            matchLabels:
-              name: monitoring
-
----
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
